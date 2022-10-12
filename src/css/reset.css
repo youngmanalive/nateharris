@@ -19,9 +19,10 @@ body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
   transition-timing-function: ease-in-out;
+  position: relative;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, div, p {
   margin: 0;
 }
 
@@ -29,10 +30,6 @@ a {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
-}
-
-[hidden] {
-  display: none !important;
 }
 
 ul {
