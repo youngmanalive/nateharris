@@ -30,3 +30,9 @@ export const getSandboxSrc = (id, options = {}) => {
 
   return `https://codesandbox.io/embed/${id}?${query}`;
 };
+
+export const trackEvent = (eventName, properties = {}) => {
+  window.gtag('event', eventName, properties);
+};
+
+export const trackView = (view) => trackEvent('view', { view });

@@ -12,7 +12,7 @@ const Header = () => {
   const subText = projectId || SUBTEXT[view] || view;
 
   return (
-    <header>
+    <header className={view}>
       <h1>nate harris</h1>
       <h2 key={subText}>{subText}</h2>
     </header>

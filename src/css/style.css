@@ -48,8 +48,8 @@ header {
   text-transform: initial;
 }
 
-.bio header,
-.main header {
+header.main,
+header.bio {
   margin: 2rem 0;
 }
 
