@@ -5,6 +5,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
+import { trackEvent, trackView } from '../util';
 import PROJECTS, { PROJECT_TYPES } from '../content/projects';
 
 export const VIEWS = {
@@ -31,22 +32,27 @@ export const AppProvider = ({ children }) => {
     if (document?.hidden) {
       const handler = () => {
         setVisible(true);
+        trackEvent('doc visible');
         document.removeEventListener('visibilitychange', handler);
       };
+      trackEvent('doc hidden');
       document.addEventListener('visibilitychange', handler);
     } else {
       setVisible(true);
     }
+    trackView(view);
   }, []);
 
   const goToProject = useCallback((projectId) => {
     setProjectId(projectId);
     setView(VIEWS.project);
+    trackView(projectId);
   }, []);
 
   const goTo = useCallback((view) => {
     setProjectId(null);
     setView(view);
+    trackView(view);
   }, []);
 
   const state = useMemo(
