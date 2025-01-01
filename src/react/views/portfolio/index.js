@@ -14,8 +14,8 @@ const Portfolio = () => {
       <Back to={VIEWS.main} />
       <Section>
         <p>
-          you’ll often find me tinkering and building things in my
-          spare time. explore some stuff i’ve made over the years:
+          you’ll often find me tinkering and building things in my spare time.
+          explore some (mostly silly) stuff i’ve made over the years:
         </p>
         <ul>
           {Object.entries(PROJECTS).map(([name, project]) => {

@@ -1,3 +1,5 @@
+import { VIEWS } from "../context";
+
 export const isDev = () => process.env.NODE_ENV === 'development';
 
 const DEFAULT_OPTIONS = {
@@ -36,3 +38,21 @@ export const trackEvent = (eventName, properties = {}) => {
 };
 
 export const trackView = (view) => trackEvent('view', { view });
+
+export const session = {
+  getView: () => {
+    try {
+      const saved = sessionStorage.getItem('view') || VIEWS.main;
+      const [view, projectId] = saved.split(':');
+      return [view, projectId || null];
+    } catch (e) {
+      return [VIEWS.main, null];
+    }
+  },
+  setView: (view, projectId) => {
+    try {
+      const toSave = projectId ? `${view}:${projectId}` : view;
+      sessionStorage.setItem('view', toSave);
+    } catch (e) {}
+  },
+};

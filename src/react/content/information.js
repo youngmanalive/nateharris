@@ -1,8 +1,8 @@
-import { VIEWS } from "../context";
+import { VIEWS } from '../context';
 
 export const INFORMATION = [
   {
-    content: 'portfolio',
+    content: 'tinkerings',
     view: VIEWS.portfolio,
     label: "check out some things i've built",
     visibility: true,

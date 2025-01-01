@@ -5,62 +5,55 @@ import Back from '../../components/back';
 import Info from '../main/info';
 import Section from '../../components/section';
 
-const SKILLS = [
-  'typescript',
+const TECH = [
   'react',
+  'graphql',
+  'relay',
+  'tailwind',
+  'webpack',
+  'figma',
+  'react testing library',
+  'snowplow',
+  'emotion',
+  'storybook',
+  'typescript',
   'mobx',
-  'gatsby',
-  'laravel',
   'php',
+  'github',
+  'laravel',
+  'django',
   'mysql',
+  'gatsby',
+  'cypress',
+  'amplitude',
 ];
-
-const Skills = () => (
-  <>
-    {SKILLS.map((skill, index) => {
-      const isLast = index === SKILLS.length - 1;
-      return (
-        <React.Fragment key={skill}>
-          {isLast && 'and '}
-          <strong>{skill}</strong>
-          {!isLast && ', '}
-        </React.Fragment>
-      );
-    })}
-  </>
-);
 
 const Bio = () => {
   return (
     <>
       <Back to={VIEWS.main} />
-      <Section title='skills'>
+      <Section title="expertise">
         <p>
-          much of my passion lies in client-side development, but i also love
-          working across the stack. i consider myself an expert in{' '}
-          <strong>react</strong> and am competent in modern{' '}
-          <strong>frontend practices</strong> and <strong>tooling</strong>.
-        </p>
-        <p>
-          my current scopes include <Skills />, to name a few. i learn by doing
-          and am always pushing myself to advance and hone my skills.
-        </p>
-        <p>
-          i am empowered when well-balanced testing coverage and peer review are
-          on my side.
+          i am an expert in <strong>react</strong> and am competent in modern{' '}
+          <strong>frontend practices</strong> and <strong>tooling</strong>. much
+          of my passion lies in client-side development, but i also love working
+          across the stack when i can.
         </p>
       </Section>
-      <Section title='experience'>
+      <Section title="experience">
         <p>
           i have been shipping production level code in both frontend and
-          backend contexts since 2019. before that you might have seen me
-          pulling espresso shots, stacking produce, or working in retail
-          horticulture.
+          backend contexts since 2019, working closely with design, product, and
+          data teams to bring ideas and visions to life.
+        </p>
+      </Section>
+      <Section title="tech">
+        <p>
+          i am familiar with a wide range of technologies, frameworks, services,
+          and tools. an unordered, non-exhaustive list:
         </p>
         <p>
-          collaboration and team support are strong factors that have driven my
-          success and day-to-day. i thrive on problem solving and helping
-          people.
+          <i>{TECH.join(', ')}.</i>
         </p>
       </Section>
       <Info />
