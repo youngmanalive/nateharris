@@ -4,6 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import { babel } from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 
+import history from 'history';
 import React from 'react';
 import ReactDomServer from 'react-dom/server';
 
@@ -63,6 +64,7 @@ class ReactSsrHtmlPlugin {
       format: 'iife',
       globals: {
         react: 'React',
+        history: 'history',
       },
     });
     const [{ code }] = output;

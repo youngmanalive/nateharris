@@ -10,6 +10,8 @@ import ReactSsrHtmlPlugin from './reactSsrHtmlPlugin.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+const isProd = process.env.NODE_ENV === 'production';
+
 /** @type {import('webpack').Configuration} */
 export default {
   entry: resolve(__dirname, 'src/index.js'),
@@ -18,10 +20,10 @@ export default {
     publicPath: '',
     filename: '[chunkhash]-[name].js',
   },
+  mode: isProd ? 'production' : 'development',
   resolve: {
     extensions: ['.js', '.json'],
     modules: [resolve(__dirname, './src'), 'node_modules'],
-
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -76,4 +78,5 @@ export default {
     static: './dist',
     watchFiles: './*',
   },
+  devtool: isProd ? false : 'source-map',
 };

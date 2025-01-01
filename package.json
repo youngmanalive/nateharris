@@ -31,9 +31,9 @@
     "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
-    "build": "webpack --mode=production",
-    "start": "webpack --mode=development --watch",
-    "serve": "webpack serve --open --mode=development",
+    "build": "NODE_ENV=production webpack",
+    "start": "webpack --watch",
+    "serve": "webpack serve --open",
     "deploy": "yarn run build && node ./deploy.js"
   },
   "dependencies": {
