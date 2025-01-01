@@ -5,15 +5,19 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { trackEvent, trackView } from '../util';
+import { trackEvent, trackView, session } from '../util';
 import PROJECTS, { PROJECT_TYPES } from '../content/projects';
+import { createBrowserHistory, createMemoryHistory } from 'history';
 
 export const VIEWS = {
   main: 'main',
-  portfolio: 'portfolio',
+  portfolio: 'tinkerings',
   project: 'project',
   bio: 'bio',
 };
+
+const isSsr = typeof window === 'undefined';
+const history = isSsr ? createMemoryHistory() : createBrowserHistory();
 
 const AppContext = React.createContext({
   view: VIEWS.main,
@@ -25,8 +29,8 @@ const AppContext = React.createContext({
 
 export const AppProvider = ({ children }) => {
   const [view, setView] = useState(VIEWS.main);
-  const [visible, setVisible] = useState(false);
   const [projectId, setProjectId] = useState(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (document?.hidden) {
@@ -40,19 +44,35 @@ export const AppProvider = ({ children }) => {
     } else {
       setVisible(true);
     }
-    trackView(view);
+
+    const [initialView, initialProjectId] = session.getView();
+    setView(initialView);
+    setProjectId(initialProjectId);
+    session.setView(initialView, initialProjectId);
+    trackView(initialView);
+  }, []);
+
+  useEffect(() => {
+    const unlisten = history.listen(({ location }) => {
+      const { view, projectId } = location.state || {
+        view: VIEWS.main,
+        projectId: null,
+      };
+      setView(view);
+      setProjectId(projectId);
+      session.setView(view, projectId);
+      trackView(view);
+    });
+
+    return () => unlisten();
   }, []);
 
   const goToProject = useCallback((projectId) => {
-    setProjectId(projectId);
-    setView(VIEWS.project);
-    trackView(projectId);
+    history.push(null, { view: VIEWS.project, projectId });
   }, []);
 
   const goTo = useCallback((view) => {
-    setProjectId(null);
-    setView(view);
-    trackView(view);
+    history.push(null, { view });
   }, []);
 
   const state = useMemo(
