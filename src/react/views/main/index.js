@@ -9,20 +9,19 @@ const Main = () => {
   const { setView } = useApp();
   return (
     <>
-      <Section title='about'>
+      <Section title="about">
         <p>
-          i am a full stack engineer living in northern california with my wife
-          and son.
+          i am a software engineer living in pennsylvania with my wife and son.
         </p>
       </Section>
-      <Section title='work'>
+      <Section title="work">
         <p>
           i currently work remotely building and maintaining web applications,
-          whether that’s database and feature architecture or rich user
-          interfaces.
+          whether that’s rich user interfaces, feature architecture, or
+          developer tooling.
         </p>
         <p>
-          <Action content='learn more...' onClick={() => setView(VIEWS.bio)} />
+          <Action content="learn more..." onClick={() => setView(VIEWS.bio)} />
         </p>
       </Section>
       <Info />
