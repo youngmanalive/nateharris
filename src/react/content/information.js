@@ -23,6 +23,12 @@ export const INFORMATION = [
     label: 'hit me up',
     visibility: true,
   },
+  {
+    content: 'retro',
+    view: VIEWS.retro,
+    label: 'check this out',
+    visibility: true,
+  },
 ].map((info) => {
   return Object.entries(info).reduce(
     (carry, [key, val]) => ({

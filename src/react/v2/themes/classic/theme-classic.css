@@ -1,0 +1,753 @@
+/* ===== Keyframes ===== */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes rainbow-bg {
+  0% {
+    background-color: red;
+  }
+  16% {
+    background-color: orange;
+  }
+  33% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: lime;
+  }
+  66% {
+    background-color: cyan;
+  }
+  83% {
+    background-color: blue;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+@keyframes rainbow-text {
+  0% {
+    color: red;
+    transform: scale(1);
+  }
+  16% {
+    color: orange;
+    transform: scale(1.1);
+  }
+  33% {
+    color: yellow;
+    transform: scale(1.1);
+  }
+  50% {
+    color: lime;
+    transform: scale(1.2);
+  }
+  66% {
+    color: cyan;
+    transform: scale(1.3);
+  }
+  83% {
+    color: blue;
+    transform: scale(1.2);
+  }
+  100% {
+    color: red;
+    transform: scale(1);
+  }
+}
+
+/* ===== Body ===== */
+
+body.theme-classic {
+  background: white;
+  color: black;
+}
+
+/* ===== Page ===== */
+
+body.theme-classic {
+  background: white;
+  color: black;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  padding: 10px;
+  min-height: 100vh;
+  text-align: center;
+  text-transform: initial;
+  user-select: auto;
+}
+
+.theme-classic .classic {
+  padding: 12px;
+  overflow-x: hidden;
+}
+
+.theme-classic a {
+  color: blue;
+}
+.theme-classic a:visited {
+  color: purple;
+}
+.theme-classic a:hover {
+  color: red;
+  cursor: pointer;
+  letter-spacing: inherit;
+  opacity: 1;
+}
+
+.theme-classic hr {
+  border-color: #ccc;
+}
+
+.theme-classic h1,
+.theme-classic h2,
+.theme-classic main {
+  animation: none;
+}
+
+.theme-classic h1 span {
+  /* animation: rainbow-text 4s linear infinite;
+  animation-name: rainbow-text; */
+  /* animation-duration: 4s; */
+}
+.theme-classic h1 span:nth-child(2n) {
+  animation-duration: 5s;
+  animation-delay: 50ms;
+}
+.theme-classic h1 span:nth-child(3n) {
+  animation-duration: 6s;
+  animation-delay: 100ms;
+}
+
+/* ===== Utilities ===== */
+
+.classic-blink {
+  animation: blink 1s step-start infinite;
+}
+
+.classic-blink--offset {
+  animation-delay: 0.3s;
+  animation-duration: 2s;
+}
+
+.classic-icon {
+  image-rendering: pixelated;
+  vertical-align: middle;
+}
+
+/* ===== Marquee ===== */
+
+.classic-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.classic-marquee-text {
+  display: inline-block;
+  min-width: 100%;
+  white-space: nowrap;
+  animation: marquee 12s linear infinite;
+}
+
+.classic-marquee-text--reverse {
+  animation-duration: 18s;
+  animation-direction: reverse;
+}
+
+/* ===== Header ===== */
+
+.classic-header {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.classic-header-icon {
+  text-align: center;
+  width: 20%;
+  vertical-align: middle;
+}
+
+.classic-header h1 {
+  font-family: 'Times New Roman', serif;
+  font-size: 36px;
+  color: navy;
+  letter-spacing: 4px;
+  margin: 4px 0;
+}
+
+.classic-header-subtitle {
+  font-size: 14px;
+  color: maroon;
+}
+
+.classic-header-welcome {
+  font-size: 13px;
+  color: #cc0000;
+  margin-top: 6px;
+}
+
+/* ===== Layout ===== */
+
+.classic-layout {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== Sidebar ===== */
+
+.classic-sidebar {
+  width: 180px;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  font-family: 'Times New Roman', serif;
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.classic-sidebar-heading {
+  color: navy;
+  font-size: 15px;
+}
+
+.classic-sidebar-section {
+  text-align: center;
+  margin: 24px 0;
+}
+
+/* ===== Sidebar: Under Construction ===== */
+
+.classic-under-construction {
+  color: red;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+}
+
+.classic-under-construction-note {
+  font-size: 13px;
+  color: #666;
+  font-style: italic;
+}
+
+/* ===== Sidebar: Ad ===== */
+
+.classic-ad {
+  border: 2px solid #cc0000;
+  background: #ffffcc;
+  padding: 8px 4px;
+  text-align: center;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+}
+
+.classic-ad-label {
+  font-size: 9px;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+.classic-ad-headline {
+  font-size: 14px;
+  color: red;
+  font-weight: bold;
+}
+
+.classic-ad-body {
+  font-size: 10px;
+  color: black;
+  margin: 4px 0;
+}
+
+.classic-ad-button {
+  display: inline-block;
+  background: #00cc00;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+  padding: 3px 8px;
+  border: 2px outset #00aa00;
+  cursor: pointer;
+}
+
+.classic-ad-disclaimer {
+  font-size: 8px;
+  color: #999;
+  margin-top: 4px;
+}
+
+/* ===== Sidebar: Favorites ===== */
+
+.classic-favorites {
+  font-size: 17px;
+  color: gray;
+  font-style: italic;
+}
+
+/* ===== Sidebar: Midi Player ===== */
+
+.classic-midi {
+  border: 1px solid #999;
+  background: #e0e0e0;
+  padding: 4px;
+  text-align: center;
+  margin: 24px 0;
+}
+
+.classic-midi-label {
+  font-size: 9px;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.classic-midi-display {
+  background: #001800;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  padding: 3px 4px;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.classic-midi-controls {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.classic-midi-btn {
+  background: #c0c0c0;
+  border: 2px outset #ddd;
+  font-size: 8px;
+  font-family: monospace;
+  padding: 1px 3px;
+  cursor: pointer;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.classic-midi-volume {
+  font-size: 7px;
+  color: #888;
+  margin-top: 3px;
+}
+
+/* ===== Content ===== */
+
+.classic-content {
+  vertical-align: top;
+  padding-left: 15px;
+  text-align: left;
+}
+
+/* ===== Section Titles ===== */
+
+.classic-section-title {
+  font-family: 'Times New Roman', serif;
+  font-size: 22px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid;
+}
+
+.classic-section-title--navy {
+  color: navy;
+  border-color: navy;
+}
+.classic-section-title--purple {
+  color: purple;
+  border-color: purple;
+}
+.classic-section-title--maroon {
+  color: maroon;
+  border-color: maroon;
+}
+.classic-section-title--teal {
+  color: teal;
+  border-color: teal;
+}
+
+/* ===== About Table ===== */
+
+.classic-about-table {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 14px;
+}
+
+.classic-about-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* ===== Body Text ===== */
+
+.classic-body {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ===== Links ===== */
+
+.classic-links {
+  font-size: 14px;
+  line-height: 2;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+/* ===== Skills ===== */
+
+.classic-skills-subtitle {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+}
+
+.classic-skills-category {
+  font-family: 'Times New Roman', serif;
+  color: navy;
+  font-size: 16px;
+}
+
+.classic-skills-table {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  width: 100%;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+.classic-skills-table th,
+.classic-skills-table td {
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+}
+
+.classic-skills-table th {
+  text-align: left;
+}
+
+.classic-skills-table th:nth-child(2),
+.classic-skills-table th:nth-child(3),
+.classic-skills-table td:nth-child(2),
+.classic-skills-table td:nth-child(3) {
+  text-align: center;
+}
+
+.classic-skills-table thead.classic-skills-head--blue th {
+  background: #e0e0ff;
+  color: navy;
+}
+.classic-skills-table thead.classic-skills-head--green th {
+  background: #e0ffe0;
+  color: green;
+}
+.classic-skills-table thead.classic-skills-head--orange th {
+  background: #fff0e0;
+  color: #996600;
+}
+
+.classic-skills-table tbody tr:nth-child(even) {
+  background: #f5f5f5;
+}
+
+.classic-bar-filled {
+  color: green;
+}
+.classic-bar-empty {
+  color: #ccc;
+}
+.classic-hot {
+  color: red;
+  font-weight: bold;
+}
+
+/* ===== Skill Shop ===== */
+
+.classic-shop-subtitle {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.classic-shop-grid {
+  width: 100%;
+  border-collapse: separate;
+}
+
+.classic-product-card {
+  position: relative;
+  width: 33%;
+  background: #fffff0;
+  border: 2px outset #ccc;
+  padding: 12px 10px;
+  text-align: center;
+  vertical-align: top;
+  font-size: 14px;
+}
+
+.classic-product-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.classic-product-name {
+  font-family: 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: navy;
+  margin-bottom: 4px;
+}
+
+.classic-product-tagline {
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.classic-product-rating {
+  margin-bottom: 4px;
+}
+
+.classic-product-stars-filled {
+  color: #cc9900;
+  font-size: 16px;
+}
+
+.classic-product-stars-empty {
+  color: #ccc;
+  font-size: 16px;
+}
+
+.classic-product-reviews {
+  font-size: 10px;
+  color: #999;
+  margin-left: 3px;
+}
+
+.classic-product-price {
+  margin: 6px 0;
+}
+
+.classic-product-original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 13px;
+  margin-right: 4px;
+}
+
+.classic-product-current-price {
+  color: #cc0000;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+}
+
+.classic-product-cart-btn {
+  display: inline-block;
+  background: #ff9900;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 5px 16px;
+  border: 2px outset #cc7700;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  margin: 6px 0;
+}
+
+.classic-product-cart-btn:hover {
+  background: #cc7700;
+}
+
+.classic-product-stock {
+  font-size: 11px;
+  color: green;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+/* ===== Product Includes ===== */
+
+.classic-product-includes {
+  margin-bottom: 8px;
+}
+
+.classic-product-includes-item {
+  display: inline-block;
+  background: #e8e8e8;
+  border: 1px solid #ccc;
+  font-size: 10px;
+  font-family: 'Arial', sans-serif;
+  padding: 1px 5px;
+  margin: 1px 2px;
+  color: #333;
+}
+
+/* ===== Shop Pagination ===== */
+
+.classic-shop-results {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.classic-shop-pagination {
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Arial', sans-serif;
+  font-size: 13px;
+}
+
+.classic-shop-page {
+  display: inline-block;
+  padding: 3px 8px;
+  margin: 0 2px;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.classic-shop-page:hover {
+  background: #ddd;
+}
+
+.classic-shop-page--active {
+  background: navy;
+  color: white;
+  font-weight: bold;
+  border-color: navy;
+  text-decoration: none;
+  cursor: default;
+}
+
+.classic-shop-page--next {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.classic-shop-page-dots {
+  display: inline-block;
+  padding: 3px 4px;
+  color: #666;
+}
+
+/* ===== Footer ===== */
+
+.classic-footer-copyright {
+  font-size: 11px;
+  color: #888;
+}
+
+.classic-rainbow-badge {
+  animation: rainbow-bg 4s linear infinite;
+  padding: 2px 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.classic-footer-ornament {
+  font-size: 10px;
+  color: #999;
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 600px) {
+  .classic-layout,
+  .classic-layout tbody,
+  .classic-layout tr,
+  .classic-layout td {
+    display: block;
+    width: 100%;
+  }
+
+  .classic-layout .classic-sidebar {
+    display: none;
+  }
+
+  .classic-content {
+    padding-left: 0;
+  }
+
+  .classic-header h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .classic-header-icon {
+    width: 10%;
+  }
+
+  .classic-header-subtitle {
+    font-size: 11px;
+  }
+
+  .classic-about-table,
+  .classic-about-table tbody,
+  .classic-about-table tr,
+  .classic-about-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .classic-shop-grid,
+  .classic-shop-grid tbody,
+  .classic-shop-grid tr,
+  .classic-shop-grid td {
+    display: block;
+    width: 100%;
+  }
+
+  .classic-product-card {
+    width: auto;
+    margin-bottom: 8px;
+  }
+
+  .classic-section-title {
+    font-size: 18px;
+  }
+}
+
+/* ===== Misc inline color helpers ===== */
+
+.classic-color-orange {
+  color: #cc6600;
+}
+.classic-color-green {
+  color: green;
+}
+.classic-color-red {
+  color: red;
+}
+.classic-color-gray {
+  color: gray;
+}

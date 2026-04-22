@@ -14,6 +14,7 @@ export const VIEWS = {
   portfolio: 'tinkerings',
   project: 'project',
   bio: 'bio',
+  retro: 'retro',
 };
 
 const isSsr = typeof window === 'undefined';

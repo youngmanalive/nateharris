@@ -7,6 +7,7 @@ import Portfolio from './views/portfolio';
 import Project from './views/project';
 import Switch from './components/switch';
 import Bio from './views/bio';
+import Retro from './views/retro';
 
 const App = () => (
   <AppProvider>
@@ -21,4 +22,4 @@ const App = () => (
   </AppProvider>
 );
 
-export default App;
+export default Retro;
