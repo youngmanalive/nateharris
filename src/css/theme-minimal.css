@@ -1,0 +1,131 @@
+body.theme-minimal {
+  background-color: #fffee5;
+  color: #606c76;
+  letter-spacing: 0.03rem;
+  text-transform: lowercase;
+  line-height: 1.5;
+  min-height: 100vh;
+  padding: 2rem;
+  user-select: none;
+}
+
+body.theme-minimal .minimal {
+  animation: minimal-fadein 1s ease both;
+  transform-origin: top;
+}
+
+@keyframes minimal-fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body.theme-minimal {
+    background-color: #606c76;
+    color: #fffee5;
+  }
+}
+
+.theme-minimal .app-inner {
+  margin: 0 auto;
+  max-width: 600px;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 600px) {
+  .theme-minimal {
+    padding: 2rem;
+  }
+}
+
+.theme-minimal header {
+  line-height: 1.2;
+  margin: 2rem 0;
+  text-transform: initial;
+}
+
+.theme-minimal h1 {
+  font-size: 3rem;
+}
+
+.theme-minimal section {
+  margin-bottom: 1.5rem;
+  outline: none;
+}
+
+.theme-minimal :focus-visible {
+  outline: none;
+}
+
+.theme-minimal p {
+  margin-bottom: 1rem;
+}
+
+.theme-minimal button {
+  border: none;
+  background: inherit;
+  line-height: inherit;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.theme-minimal button:focus,
+.theme-minimal a:focus {
+  outline: 1px solid currentColor;
+  border-radius: 4px;
+}
+
+.theme-minimal a,
+.theme-minimal button {
+  position: relative;
+  letter-spacing: inherit;
+  transition:
+    letter-spacing ease 250ms,
+    opacity ease 250ms;
+}
+
+.theme-minimal button:hover,
+.theme-minimal a:hover {
+  opacity: 0.8;
+}
+
+.theme-minimal .action {
+  display: inline-block;
+}
+
+.theme-minimal .action::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 1px;
+  left: 0;
+  border-bottom: 1px solid;
+  opacity: 0.5;
+  line-height: inherit;
+}
+
+.theme-minimal ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  list-style-type: circle;
+}
+
+.theme-minimal li {
+  margin: 0.125rem 0;
+}
+
+.theme-minimal li .action {
+  height: 24px;
+}
+
+.theme-minimal strong {
+  font-weight: 800;
+}

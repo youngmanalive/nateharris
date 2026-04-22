@@ -2,9 +2,12 @@ import React from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 
 import './css/reset.css';
-import './css/style.css';
+import './css/theme-picker.css';
+import './css/theme-minimal.css';
+// import './css/theme-classic.css';
+import './react/v2/themes/classic/theme-classic.css';
 
-import App from './react/app';
+import App from './react/v2/app';
 
 const container = document.getElementById('root');
 if (container.hasChildNodes()) {

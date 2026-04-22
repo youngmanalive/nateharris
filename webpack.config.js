@@ -1,4 +1,6 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import _HTMLInlineCSSWebpackPlugin from 'html-inline-css-webpack-plugin';
+const HTMLInlineCSSWebpackPlugin = _HTMLInlineCSSWebpackPlugin.default;
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import CnameWebpackPlugin from 'cname-webpack-plugin';
@@ -36,6 +38,7 @@ export default {
     new ReactSsrHtmlPlugin({
       input: resolve(__dirname, 'src/ssr.js'),
     }),
+    // new HTMLInlineCSSWebpackPlugin(),
     new CnameWebpackPlugin({ domain: 'nateharris.io' }),
   ],
   module: {
